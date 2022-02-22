@@ -27,7 +27,7 @@ steps:
   displayName: 'Build and push image to acr'
   inputs:
     containerRegistry: 'kanolanacr'
-    repository: 'bprestws'
+    repository: '$(imageName):$(version)'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
 - task: CmdLine@2
