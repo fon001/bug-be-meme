@@ -30,6 +30,7 @@ steps:
     repository: '$(imageName):$(version)'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
+    tags:
 - task: CmdLine@2
   displayName: 'Replace version number'
   inputs:
