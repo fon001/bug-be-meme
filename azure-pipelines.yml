@@ -12,7 +12,6 @@ pool:
 steps:
 - task: Maven@3
   displayName: 'Create WAR file'
-
   inputs:
     mavenPomFile: 'pom.xml'
     goals: 'clean package'
@@ -23,6 +22,7 @@ steps:
     mavenAuthenticateFeed: false
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
+
 - task: Docker@2
   displayName: 'Build and push image to acr'
   inputs:
@@ -35,6 +35,7 @@ steps:
   displayName: 'Replace version number'
   inputs:
     script: 'sed -i ''s/bprestws:latest/$(imageName):$(version)/g'' create-service-manifest.yaml'
+
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: 'create-service-manifest.yaml'
