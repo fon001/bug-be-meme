@@ -24,11 +24,11 @@ steps:
     sonarQubeRunAnalysis: false
 
 - task: Docker@2
-  displayName: 'Build and push image to acr'
+  displayName: 'Build and Push Image to ACR'
   inputs:
     containerRegistry: 'fonacregistry'
     repository: 'bprestws'
-    #repository: '(imageName):$(version)'
+    #repository: '$(imageName):$(version)'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
     tags: 
