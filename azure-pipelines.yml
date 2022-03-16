@@ -29,7 +29,6 @@ steps:
     containerRegistry: 'fonacregistry'
     repository: 'bprestws'
     #repository: '(imageName):$(version)'
-    azureSubscriptionEndpoint:/subscriptions/1fa954c5-8818-405c-9ce5-f2bb5e7722e8/resourceGroups/fonrgroup
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
     tags: 
