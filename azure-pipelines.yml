@@ -30,6 +30,7 @@ steps:
     repository: 'bprestws'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
+    tags: 
   
 - task: CmdLine@2
   displayName: 'Replace version number'
