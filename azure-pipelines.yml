@@ -27,8 +27,8 @@ steps:
   displayName: 'Build and Push Image to ACR'
   inputs:
     containerRegistry: 'fonacregistry'
-    repository: 'bprestws'
-    #repository: '$(imageName):$(version)'
+    #repository: 'bprestws'
+    repository: '$(imageName):$(version)'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
     tags: 
