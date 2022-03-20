@@ -36,8 +36,9 @@ steps:
   displayName: 'Push Docker Image to ACR'
   inputs:
     containerRegistry: 'fonacregistry'
-    #repository: 'bprestws'
+    repository: '$(imageName)'
     command: 'push'
+    tags: 
 
     
 - task: CmdLine@2
