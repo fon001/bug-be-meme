@@ -38,7 +38,7 @@ steps:
     containerRegistry: 'fonacregistry'
     repository: '$(imageName):$(version)'
     command: 'push'
-    
+
     
 - task: CmdLine@2
   displayName: 'Replace version number'
