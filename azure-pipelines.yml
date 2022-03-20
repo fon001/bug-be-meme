@@ -22,16 +22,23 @@ steps:
     mavenAuthenticateFeed: false
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
-
 - task: Docker@2
-  displayName: 'Build and Push Image to ACR'
+  displayName: 'Building Docker Image'
   inputs:
     containerRegistry: 'fonacregistry'
-    #repository: 'bprestws'
     repository: '$(imageName):$(version)'
-    command: 'buildAndPush'
+    command: 'build'
     Dockerfile: '**/Dockerfile'
     tags: 
+
+- task: Docker@2
+  displayName: 'Push Image to ACR'
+  inputs:
+    containerRegistry: 'fonacregistry'
+    repository: '$(imageName):$(version)'
+    command: 'push'
+
+
     
 - task: CmdLine@2
   displayName: 'Replace version number'
