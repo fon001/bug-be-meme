@@ -33,12 +33,13 @@ steps:
     tags: 
 
 - task: Docker@2
-  displayName: 'Push Docker Image to ACR'
+  displayName: 'Push Docker Image'
   inputs:
     containerRegistry: 'fonacregistry'
-    repository: '$(imageName)'
+    repository: '$(imageName):$(version)'
     command: 'push'
     tags: 
+    
 
     
 - task: CmdLine@2
