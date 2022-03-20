@@ -36,7 +36,7 @@ steps:
   displayName: 'Push Image to ACR'
   inputs:
     containerRegistry: 'fonacregistry'
-    repository: '$(imageName):$(version)'
+    repository: 'fonacregistry.azurecr.io/bprestws:latest'
     command: 'push'
 
     
