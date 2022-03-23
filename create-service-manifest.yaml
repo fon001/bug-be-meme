@@ -76,8 +76,10 @@ spec:
     # Loadbalance traffic across Pods matching
     # this label selector
     app: bp
+ 
+ 
  ---
-  apiVersion: apps/v1
+apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: mongo
