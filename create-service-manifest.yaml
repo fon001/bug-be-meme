@@ -5,17 +5,30 @@ metadata:
   name: bp-deployment
   labels:
     app: bp
+
 spec:
   # modify replicas according to your case
   replicas: 1
   selector:
     matchLabels:
       app: bp 
+
+   revisionHistoryLimit: 14
+   # deployment strategy
+   strategy:
+      type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    minReadySeconds: 60
+    progressDeadlineSeconds: 600
+    
   # pod template
   template:
     metadata:
       labels:
         app: bp
+
     spec:
       # pod contains 1 container
       containers:
