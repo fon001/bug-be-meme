@@ -52,14 +52,6 @@ spec:
             cpu: "1000m"   
             memory: "256Mi" 
         
-        livenessProbe:
-          httpGet:
-            path: /healthy
-            port: 8080
-          initialDelaySeconds: 180
-          timeoutSeconds: 5
-          periodSeconds: 180
-          failureThreshold: 3
           
         # container opens port 8080
         ports:
