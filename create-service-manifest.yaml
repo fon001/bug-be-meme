@@ -35,12 +35,12 @@ spec:
       - name: bp
         image: fonacregistry.azurecr.io/bprestws:latest 
         resources:
-          requests:  #request a Pod with  a minimum of 0.1 of a core and 250 MB of memory
+          requests:  #request a Pod with  a minimum of 1 core and 256 MB of memory
             cpu: "1000m"
-            memory: "1000Mi"
-          limits:    #add a limit of 1.0 CPU and 256 MB of memory
+            memory: "256Mi"
+          limits:    #add a limit of 1.0 CPU and 512 MB of memory
             cpu: "1500m"   
-            memory: "1500Mi" 
+            memory: "512Mi" 
         livenessProbe:
           httpGet:
             path: /healthy
