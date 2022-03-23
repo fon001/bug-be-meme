@@ -52,7 +52,6 @@ spec:
             cpu: "1000m"   
             memory: "256Mi" 
         
-          
         # container opens port 8080
         ports:
         - containerPort: 8080
