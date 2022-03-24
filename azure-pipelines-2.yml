@@ -37,7 +37,7 @@ steps:
 - task: CmdLine@2
   displayName: 'Replace version number'
   inputs:
-    script: 'sed -i ''s/bprestws-hollow:latest/$(imageName):$(version)/g'' Dockerfile-thinwar'
+    script: 'sed -i ''s/bprestws-hollow:latest/$(hollowImage):$(version)/g'' Dockerfile-thinwar'
 
 
 - task: Docker@2
@@ -53,7 +53,7 @@ steps:
 - task: CmdLine@2
   displayName: 'Replace version number'
   inputs:
-    script: 'sed -i ''s/bprestws-thinwar:latest/$(imageName):$(version)/g''create-thin-service-manifest.yaml'
+    script: 'sed -i ''s/bprestws-thinwar:latest/$(thinImage):$(version)/g''create-thin-service-manifest.yaml'
 
 - task: PublishBuildArtifacts@1
   inputs:
