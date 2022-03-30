@@ -25,13 +25,20 @@ steps:
     sonarQubeRunAnalysis: false
 
 - task: Docker@2
-  displayName: 'Build and push image to acr'
+  displayName: 'Build and  image to ACR'
   inputs:
     containerRegistry: 'fonacregistry'
     repository: '$(imageName):$(version)'
-    command: 'buildAndPush'
+    command: 'build'
     Dockerfile: '**/Dockerfile'
     tags:
+
+- task: Docker@2
+  displayName: 'Push image to ACR'
+  inputs:
+    containerRegistry: 'fonacregistry'
+    repository: '$(imageName):$(version)'
+    command: 'Push'
 
 - task: CmdLine@2
   displayName: 'Replace version number'
