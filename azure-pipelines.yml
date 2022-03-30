@@ -24,7 +24,7 @@ steps:
     sonarQubeRunAnalysis: false
 
 - task: Docker@2
-  displayName: 'Build Image to ACR'
+  displayName: 'Build Image'
   inputs:
     containerRegistry: 'fonacregistry'
     repository: '$(imageName):$(version)'
