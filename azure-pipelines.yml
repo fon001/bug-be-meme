@@ -24,15 +24,20 @@ steps:
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
 
+
 - task: Docker@2
-  displayName: 'Build and push image to acr'
   inputs:
     containerRegistry: 'fonacregistry'
     repository: '$(imageName):$(version)'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
-    tags:
+    tags: 
 
+- task: Docker@2
+  inputs:
+    containerRegistry: 'fonacregistry'
+    repository: '$(imageName):$(version)'
+    command: 'push'
 - task: CmdLine@2
   displayName: 'Replace version number'
   inputs:
