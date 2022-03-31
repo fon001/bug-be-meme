@@ -32,6 +32,7 @@ steps:
     repository: '$(imageName):$(version)'
     command: 'build'
     Dockerfile: '**/Dockerfile'
+    tags: 
 
 - task: Docker@2
   displayName: 'Push image to ACR'
