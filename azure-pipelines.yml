@@ -29,9 +29,8 @@ steps:
   inputs:
     containerRegistry: 'fonacregistry'
     repository: '$(imageName):$(version)'
-    command: 'buildAndPush'
+    command: 'build'
     Dockerfile: '**/Dockerfile'
-    tags: 
 
 - task: Docker@2
   inputs:
